@@ -1,0 +1,72 @@
+.container {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.tool {
+    background-color: brown;
+    
+}
+
+#text {
+    color: white;
+    padding-left: 5px;
+}
+
+.img {
+    padding-left: 82%;
+    padding-right: 11%;
+    padding-top: 3%;
+    float: left;
+}
+#title{
+       
+        margin-top: 7%;
+        font-size: 3vh;
+        font-weight: bold;
+        margin-left: 47%; 
+}
+.bookstore{
+    width: 95%;
+    padding: 0px 0;
+    padding-left: 5px;
+    
+ }
+.forgotpass {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    width: 235px;
+    padding: 100px;
+    margin: auto;
+   
+    height: 26%;
+    background-color: white;
+    border: aliceblue;
+   
+}
+
+.forgot {
+    width: 116%;
+    height: 284px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    box-shadow: 2px 2px 6px 0px rgb(0 0 0 / 30%);
+    padding: 50px;
+    margin-top: -45%;
+}
+ 
+#content{
+ text-align: start;
+ color: gray;
+}
+.primary {
+    width: 95%;
+    padding: 5%;
+    background-color: brown;
+    color: white;
+    border: aliceblue;
+}
+

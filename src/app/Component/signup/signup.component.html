@@ -1,0 +1,71 @@
+<div class="Container ">
+    <mat-card class="Block1">
+
+        <div>
+            <img class="img" src="../../../assets/shoping/onlineshopping.png" alt="">
+        </div>
+
+        <div class="TextForBook">
+            ONLINE BOOK SHOPPING
+        </div>
+    </mat-card>
+
+    <mat-card class="Block2" fxLayout="row" fxLayoutAlign="center center">
+        <div fxLayout="row">
+            <button type="button" class="login" routerLink="/login">LOGIN</button>
+            <button type="button" class="signup" routerLink="/signup">SIGNUP</button>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onsubmit()" fxFlex=100 fxLayout.xs=100>
+          
+            <div class="form">
+               
+                <div style="height: 5px;">
+
+                    <div fxLayout="column">
+
+                        <div>
+                            <mat-label>FullName</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="" formControlName="FullName">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="column">
+
+                        <div>
+                            <mat-label>EmailId</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="" formControlName="Email">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="column">
+
+                        <div>
+                            <mat-label>Password</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="" formControlName="Password">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column">
+
+                        <div>
+                            <mat-label>MobileNumber</mat-label>
+                        </div>
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="" formControlName="PhoneNumber">
+                        </mat-form-field>
+                    </div>
+
+
+
+                    <button mat-button class="signupbutton">Signup</button>
+                  
+                </div>
+            </div>
+        </form>
+    </mat-card>
+</div>

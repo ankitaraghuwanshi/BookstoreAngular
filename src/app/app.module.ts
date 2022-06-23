@@ -3,14 +3,40 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignupComponent } from './Component/signup/signup.component';
+import { LoginComponent } from './Component/login/login.component';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+// import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+ import {MatInputModule} from '@angular/material/input';
+ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ResetComponent } from './Component/reset/reset.component';
+import { DashboardComponent } from './Component/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignupComponent,
+    LoginComponent,
+    ForgotPasswordComponent,
+    ResetComponent,
+    DashboardComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+
+    MatFormFieldModule,MatCardModule,MatInputModule,FormsModule,ReactiveFormsModule,HttpClientModule,HttpClientModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

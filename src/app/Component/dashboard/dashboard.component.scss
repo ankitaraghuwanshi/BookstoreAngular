@@ -1,5 +1,58 @@
 .container {
     height: 100%;
     width: 100%;
+
+}
+
+.tool {
+    background-color: brown;
+
+}
+
+#text {
+    color: white;
+    padding-left: 5px;
+
+
+}
+
+
+.cart{background-color: brown;
+color: white;
+opacity: 1;
+border: none;
+margin-left: 50px;
+}
+.profile{
+    background-color: brown;
+    color: white;
+    opacity: 1;
+    border: none; 
+    //  margin-left: 200px;
+}
+.icons{
+    width:100px; height: 60px; padding-top: 10px; margin-left: 150px;
+}
+.person{
+    height:18px ; margin-left: 4px; color: aliceblue;  
+}
+.profile{
+    font-size: 12px; color: aliceblue; padding-right: 20px;
+}
+.iconscart{
+    width:100px; height: 60px; padding-top: 10px;
+}
+.footer{
+    display: flex;
+    height: 50px;
+    align-items:center;
+    color:white;
+     bottom: 0;
+    padding-left:170px ;
+    background-color: #2E1D1E;
+    position: fixed;
+   width: 100%;
+   
+  
     
 }

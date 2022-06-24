@@ -15,10 +15,10 @@
             <button type="button" class="login" routerLink="/login">LOGIN</button>
             <button type="button" class="signup" routerLink="/signup">SIGNUP</button>
         </div>
-        <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()" >
-        <div class="Form">
+        <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()">
+            <div class="Form">
 
-           
+
 
                 <div fxLayout="column" style="height:80px">
 
@@ -29,37 +29,39 @@
                         <input matInput placeholder="" formControlName="Email">
                     </mat-form-field>
                 </div>
-         
 
-            
+
+
                 <div fxLayout="column">
 
-                    <div style="margin-bottom: 22px;"> 
+                    <div style="margin-bottom: 22px;">
                         <mat-label>Password</mat-label>
                     </div>
                     <mat-form-field appearance="outline">
                         <input matInput placeholder="" formControlName="Password">
+                        <button class="forgot" mat-button class="button" routerLink="/forgotpassword">Forget Password?</button>
                     </mat-form-field>
+
+                    
+                      
+                  
+
                 </div>
-           
 
-            <div class="forgotpassword"  >
-                <button mat-button class="button" routerLink="/forgotpassword" >Forget Password?</button>
-            </div>
 
-            <button class="loginButton">Login</button>
+                <button class="loginButton">Login</button>
 
-            <div class="or" fxLayoutAlign="center">
-                <h2>-------OR-------</h2>
-            </div>
+                <div class="or" fxLayoutAlign="center">
+                    <h2>-------OR-------</h2>
+                </div>
 
-            <div>
-                <div class="buttonatlast" fxLayout="row" fxLayoutAlign="space-around center">
-                    <button class="facebookbutton" mat-flat-button color="primary">Facebook</button>
-                    <button class="googlebutton" mat-flat-button>Google</button>
+                <div>
+                    <div fxLayout="row" fxLayoutAlign="space-around center">
+                        <button class="facebookbutton" mat-flat-button color="primary">Facebook</button>
+                        <button class="googlebutton" mat-flat-button>Google</button>
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
     </mat-card>
 </div>

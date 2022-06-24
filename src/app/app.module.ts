@@ -18,7 +18,7 @@ import { ForgotPasswordComponent } from './Component/forgot-password/forgot-pass
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ResetComponent } from './Component/reset/reset.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
     BrowserAnimationsModule,
 
     MatFormFieldModule,MatCardModule,MatInputModule,FormsModule,ReactiveFormsModule,HttpClientModule,HttpClientModule,
-    MatToolbarModule
+    MatToolbarModule,MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

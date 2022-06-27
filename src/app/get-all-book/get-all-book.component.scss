@@ -1,0 +1,119 @@
+
+
+#book-count {
+    margin-top: -22px;
+    margin-left: 159px;
+    font-size: medium;
+    color: rgb(214, 211, 211);
+}
+
+.bookstext {
+    font-size: 18px;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.sorting {
+    margin-top: -67px;
+    margin-left: 63%;
+    border-radius: none;
+    outline: none;
+}
+
+.count {
+    margin-left: 10px;
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+.matselect {
+    color: brown;
+    height: 10px;
+    outline: none;
+}
+
+.card {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 6%
+}
+
+.fullbox {
+    border: 1px solid gainsboro;
+    width: 250px;
+    height: 370px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.bookimgae {
+    width: 251px;
+    height: 210px;
+    background-color: gainsboro;
+   
+}
+
+.img {
+    width: 110px;
+    height: 140px;
+    margin-left: 70px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: medium;
+    margin-left: 13px;
+}
+
+#paragraph {
+    margin-top: -24px;
+    font-size: small;
+    color: gray;
+    margin-left: 14px;
+}
+
+.rating {
+    font-size: 12px;
+    margin-top: -6px;
+    margin-left: 15px;
+    background: green;
+    color: white;
+    height: 15px;
+    width: 29px;
+    padding: 2px;
+}
+
+.Star {
+    height: 11px;
+    width: 11px;
+    font-size: 10px;
+    margin-top: -1px;
+}
+
+#del {
+    color: gray;
+}
+
+#count {
+    margin-top: -8%;
+    margin-left: 20%;
+    font-size: small;
+    color: gainsboro;
+}
+
+.discount {
+    margin-top: 5px;
+    margin-left: 13px;
+    font-size: revert;
+}
+
+.actual {
+    margin-left: 13px;
+    text-decoration: line-through;
+    color: gray;
+}
+
+

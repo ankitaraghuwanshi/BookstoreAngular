@@ -9,17 +9,19 @@ import { LoginComponent } from './Component/login/login.component';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
-// import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+
  import {MatInputModule} from '@angular/material/input';
  import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+
 import { HttpClientModule } from '@angular/common/http';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ResetComponent } from './Component/reset/reset.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import {MatIconModule} from '@angular/material/icon';
-
+import { GetAllBookComponent } from './get-all-book/get-all-book.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import {MatIconModule} from '@angular/material/icon';
     ForgotPasswordComponent,
     ResetComponent,
     DashboardComponent,
+    GetAllBookComponent,
    
   ],
   imports: [
@@ -36,7 +39,7 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
 
     MatFormFieldModule,MatCardModule,MatInputModule,FormsModule,ReactiveFormsModule,HttpClientModule,HttpClientModule,
-    MatToolbarModule,MatIconModule
+    MatToolbarModule,MatIconModule,MatMenuModule,MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

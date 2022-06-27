@@ -28,7 +28,8 @@ margin-left: 50px;
     color: white;
     opacity: 1;
     border: none; 
-    //  margin-left: 200px;
+    margin-left: 2px;
+   
 }
 .icons{
     width:100px; height: 60px; padding-top: 10px; margin-left: 150px;
@@ -44,7 +45,7 @@ margin-left: 50px;
 }
 .footer{
     display: flex;
-    height: 50px;
+    height: 40px;
     align-items:center;
     color:white;
      bottom: 0;
@@ -55,4 +56,14 @@ margin-left: 50px;
    
   
     
+}
+.wishlistIcon {
+    color: brown;
+}
+
+.wishlistbutton {
+    margin-top: -20px;
+}
+.welcome {
+    margin-left: 18px;
 }

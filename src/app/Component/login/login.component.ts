@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   token: any;
   Users:any
-  constructor(private formBuilder: FormBuilder, private User: UserService) {
+  constructor(private formBuilder: FormBuilder, private User: UserService,private router:Router) {
     this.token = localStorage.getItem("token")
    }
 
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       Password: ['', [Validators.required, Validators.minLength(6)]],
       
     });
-    
+    localStorage.setItem('SeesionUser',this.Users)   
   }
   OnSubmit() {
     this.submitted = true;
@@ -36,7 +36,8 @@ export class LoginComponent implements OnInit {
       }
       this.User.login(reqdata).subscribe((response: any) => {
         console.log(response);
-        localStorage.setItem("token", response.data);
+        localStorage.setItem("token", response.data.token);
+        this.router.navigateByUrl('/dashboard')
       })
     }
    

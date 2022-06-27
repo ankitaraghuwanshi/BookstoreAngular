@@ -1,4 +1,4 @@
-<div class="Container">
+<div class="mainContainer">
     <mat-card class="Block1">
 
         <div>
@@ -12,7 +12,7 @@
 
     <mat-card class="Block2">
         <div fxLayout="row">
-            <button type="button" class="login" routerLink="/login">LOGIN</button>
+            <button type="button" class="login" >LOGIN</button>
             <button type="button" class="signup" routerLink="/signup">SIGNUP</button>
         </div>
         <form [formGroup]="loginForm" (ngSubmit)="OnSubmit()">

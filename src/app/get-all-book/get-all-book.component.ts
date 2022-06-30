@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from '../Services/book.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { BookService } from '../Services/book.service';
 export class GetAllBookComponent implements OnInit {
   
   booksArray: any = [];
-  bookQuantity : any;
+  
   Bookie:any;
-  orderQuantity=1;
-  constructor(private Bookser: BookService) { }
+
+  constructor(private Bookser: BookService,private router:Router) { }
 
   ngOnInit(): void {
     this.getallBook();
@@ -35,5 +36,9 @@ export class GetAllBookComponent implements OnInit {
   }
   newestarrivals(){
     this.booksArray.reverse();
+  }
+  quickview(Bookie:any){  
+    localStorage.setItem('bookId', Bookie.bookId); 
+    this.router.navigateByUrl('dashboard/quickview')
   }
 }

@@ -21,7 +21,9 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import {MatIconModule} from '@angular/material/icon';
 import { GetAllBookComponent } from './get-all-book/get-all-book.component';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select'
+import {MatSelectModule} from '@angular/material/select';
+import { QuickviewComponent } from './Component/quickview/quickview.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import {MatSelectModule} from '@angular/material/select'
     ResetComponent,
     DashboardComponent,
     GetAllBookComponent,
+    QuickviewComponent,
+  
    
   ],
   imports: [

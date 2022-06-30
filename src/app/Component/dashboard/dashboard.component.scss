@@ -6,7 +6,8 @@
 
 .tool {
     background-color: brown;
-
+    display: flex;
+   
 }
 
 #text {
@@ -35,10 +36,10 @@ margin-left: 50px;
     width:100px; height: 60px; padding-top: 10px; margin-left: 150px;
 }
 .person{
-    height:18px ; margin-left: 4px; color: aliceblue;  
+    height:18px ; margin-left: 4px; color: white;  
 }
 .profile{
-    font-size: 12px; color: aliceblue; padding-right: 20px;
+    font-size: 12px; color: white; padding-right: 20px;
 }
 .iconscart{
     width:100px; height: 60px; padding-top: 10px;
@@ -51,19 +52,14 @@ margin-left: 50px;
      bottom: 0;
     padding-left:170px ;
     background-color: #2E1D1E;
-    position: fixed;
+    position:relative;
    width: 100%;
-   
-  
-    
-}
+}   
+
 .wishlistIcon {
     color: brown;
 }
 
 .wishlistbutton {
     margin-top: -20px;
-}
-.welcome {
-    margin-left: 18px;
 }

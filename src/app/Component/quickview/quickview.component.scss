@@ -1,0 +1,198 @@
+#book-count {
+    cursor: pointer;
+    margin-top: -22px;
+    margin-left: 190px;
+    font-size: medium;
+    color: rgb(214, 211, 211);
+}
+
+.addtobag{
+    height: 30px;
+    width: 140px;
+    color: white;
+    font-size: small;
+    font-weight: 600;
+    background-color: brown;
+    border:none
+}
+.wishlist{
+    // position: fixed;
+    margin-left: 35px;
+    height: 30px;
+    width: 140px;
+    color: white;
+    font-size: small;
+    font-weight: 600;
+    background-color: black;  
+}
+.title {
+    font-size: 235%;
+    margin-left: 13px;
+}
+
+#paragraph {
+    margin-top: -10px;
+    font-size: 150%;
+    color: gray;
+    margin-left: 14px;
+}
+
+.rating {
+    font-size: 15px;
+   
+    margin-left: 15px;
+    background: green;
+    color: white;
+    height: 22px;
+    width: 25px;
+    padding: 2px;
+}
+#fav-icons {
+    color: white;
+    font-size: 122%;
+    padding-top: 2px;
+}
+
+.Star {
+    height: 11px;
+    width: 11px;
+    font-size: 10px;
+    margin-top: -1px;
+}
+
+
+
+#count {
+    margin-top: -8%;
+    margin-left: 20%;
+    font-size: small;
+    color: gainsboro;
+}
+
+.discount {
+    margin-left: 13px;
+    text-decoration: line-through;
+    color: gray; 
+    margin-top: 48px;
+}
+
+.actual {
+     margin-top: 45px;
+    margin-left: 13px;
+    font-size: 226%;
+    font-weight: 500;
+}
+.price-container{
+    display: flex;
+    direction: row;
+    margin-top: 50px;
+}
+.leftside{
+    display: flex;
+    direction: row;
+}
+.main{
+    width:100%
+}
+.bookdetails{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size:18px;
+    color: gray; 
+    font-weight: 500;
+}
+.bookparagraph{
+    font-size:15px;
+    color: rgb(15, 12, 12); 
+    font-weight: 500;
+    margin-top: 6px;
+}
+.overallrating {
+    height: 150px;
+    background: #efefef;
+    margin-left: 15px;
+}
+
+
+.review {
+    width: 670px;
+    height: 36px;
+  
+    margin-left: 15px;
+    border: none;
+}
+.submit{
+    color: whitesmoke;
+    float: right;
+    margin-right: 35px;
+    margin-top: 7px;
+    background-color: #3371B5;
+   border:none;
+    font-size: 16px;
+}
+.rate {
+   
+    float: left;
+    
+    margin-left: 10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    top: -9999px;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    margin-bottom: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 22px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+    font-size: 28px;
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+  
+}
+.userfeedback {
+    // border: 1px solid gainsboro;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.feedback-box {
+    margin: 5px;
+   
+    background: white;
+}
+
+.userfeed {
+    margin-top: 1px;
+    border:none;
+    font-size: 15px;
+    font-weight: 500;
+}
+.usercomments{
+    display: flex; flex-direction: column-reverse;margin-left: 30px;margin-top: 15px;background-color: aliceblue;
+}
+.wrapper{
+    height: 30px;
+    width: 140px;
+}
+.bitt{
+    display: flex;
+    direction:row;
+    justify-content: space-between;
+}
+.usercom{
+    margin-top: 37px;
+    color: gray;
+}

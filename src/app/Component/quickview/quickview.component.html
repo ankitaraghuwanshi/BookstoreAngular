@@ -1,0 +1,152 @@
+<div class="main" style="margin-bottom:20px">
+    <div class="main2">
+        <div class="head">
+
+            <span style="color:rgb(183, 187, 190); margin-left: 87px;" routerLink="/dashboard/getallbook">Home/</span>
+            <span>Book ({{BookId}})<p id="book-count">
+                </p>
+            </span>
+            <span class="count"></span>
+        </div>
+        <div>
+
+            <div class="leftside">
+                <div class="images" style="display: flex ;">
+                    <div class="smallone" style="    margin-top: 33px;  margin-left: 90px;">
+                        <img class="imagesmaller" style="width: 50px; height: 70px;padding: 2px;border-color: brown;
+    border: 1px solid;" [src]="booksArray?.bookImage" alt="">
+                    </div>
+                    <div class="bigimg" style="margin-left: 8px; margin-top: 32px;">
+                        <div>
+                            <img class="imagesmaller" style="    width: 246px;
+                            height: 336px;
+                            padding: 33px;
+                            border: 1px solid;
+                            border-color: #af9e9e;" [src]="booksArray?.bookImage" alt="">
+                            <div class="bitt" style="margin-top:10px">
+
+                                <button class="addtobag" *ngIf="!show" (click)="hideAndShow()">ADD TO BAG</button>
+                                <div class="wrapper" *ngIf="show">
+                                    <button style="background-color: white;">-</button>
+                                    <input style="width:80px" class="num" value="0" [(ngModel)]="value" />
+                                    <button style="background-color: white;" (click)="AddToBag()">+</button>
+                                </div>
+                                <button class="wishlist">
+                                    <mat-icon id="fav-icons">favorite</mat-icon>WISHLIST
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="right" style=" margin-left: 40px;width:50%">
+                    <div style="margin-top: 32px;">
+                        <h2 class="title">{{booksArray?.bookName}}</h2>
+                        <p id="paragraph">{{booksArray?.authorName}}</p>
+                        <div class="rating" fxLayoutAlign="space-evenly center">
+                            {{booksArray?.rating}}<img class="Star" src="../../assets/shoping/star.svg" alt="">
+                        </div>
+                        <p id="count"></p>
+                        <div class="price-container">
+                            <div class="actual">Rs. {{booksArray?.originalPrice}}
+
+                            </div>
+                            <div class="discount">Rs. {{booksArray?.discountPrice}}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <hr style=" margin-top: 25px; margin-left: 22px;margin-bottom: 25px  ">
+                        <div class="bookdetails">
+                            <span class="booktitle">Book Details</span>
+                            <p class="bookparagraph">
+                                {{booksArray?.bookDetails}}
+
+
+                            </p>
+                        </div>
+                        <hr style=" margin-top: 25px ;margin-left: 22px">
+                        <div style=" margin-top: 30px ;margin-left: 15px">
+                            <div>
+                                <div class="feed" style="
+                                    font-size: 20px;
+                                    font-weight: 500;
+                                ">
+                                    <p style="font-weight: 400;
+                                    margin-left: 10px;">Customer Feedback</p>
+                                </div>
+
+                                <div class="overallrating">
+                                    <div>
+                                        <p style="font-weight:500;margin-left: 10px;">Overall Rating</p>
+                                        <div>
+                                            <div class="rate">
+
+                                                <input type="radio" id="star5" name="rate" [(ngModel)]="Rating"
+                                                    value="5" />
+                                                <label for="star5" title="Extremely Good">5 stars</label>
+                                                <input type="radio" id="star4" name="rate" [(ngModel)]="Rating"
+                                                    value="4" />
+                                                <label for="star4" title="Very Good">4 stars</label>
+                                                <input type="radio" id="star3" name="rate" [(ngModel)]="Rating"
+                                                    value="3" />
+                                                <label for="star3" title="Good">3 stars</label>
+                                                <input type="radio" id="star2" name="rate" [(ngModel)]="Rating"
+                                                    value="2" />
+                                                <label for="star2" title="Not Bad">2 stars</label>
+                                                <input type="radio" id="star1" name="rate" [(ngModel)]="Rating"
+                                                    value="1" />
+                                                <label for="star1" title="Bad">1 star</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div>
+                                        <input class="review" [(ngModel)]="Comment" placeholder="Write your review">
+                                    </div>
+                                    <div>
+                                        <button class="submit" mat-flat-button color="primary"
+                                            (click)="AddFeedback()">submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="usercomments">
+                            <div *ngFor="let feedback of FeedbackArray">
+                                <div class="userfeed">
+                                    <span class="user-feedback"> <b></b> {{(feedback?.fullName)}}</span>
+                                </div>
+                                <div class="rate">
+
+                                    <input type="radio" id="star5" name="rate" [(ngModel)]="Rating" value="5" />
+                                    <label for="star5" title="Extremely Good">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" [(ngModel)]="Rating" value="4" />
+                                    <label for="star4" title="Very Good">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" [(ngModel)]="Rating" value="3" />
+                                    <label for="star3" title="Good">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" [(ngModel)]="Rating" value="2" />
+                                    <label for="star2" title="Not Bad">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" [(ngModel)]="Rating" value="1" />
+                                    <label for="star1" title="Bad">1 star</label>
+                                </div>
+                                <div class="usercom">
+                                    <span><b></b> {{feedback?.comment}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

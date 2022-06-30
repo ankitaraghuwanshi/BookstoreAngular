@@ -4,7 +4,7 @@
     margin-top: -22px;
     margin-left: 159px;
     font-size: medium;
-    color: rgb(214, 211, 211);
+    color: rgb(209, 199, 199);
 }
 
 .bookstext {
@@ -15,7 +15,7 @@
 }
 
 .sorting {
-    margin-top: -67px;
+    margin-top: -52px;
     margin-left: 63%;
     border-radius: none;
     outline: none;
@@ -43,7 +43,7 @@
 .fullbox {
     border: 1px solid gainsboro;
     width: 250px;
-    height: 370px;
+    height: 360px;
     margin: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -101,19 +101,25 @@
     margin-top: -8%;
     margin-left: 20%;
     font-size: small;
-    color: gainsboro;
+    color: #bdb5b5;
 }
 
 .discount {
     margin-top: 5px;
     margin-left: 13px;
     font-size: revert;
+    
 }
 
 .actual {
     margin-left: 13px;
     text-decoration: line-through;
     color: gray;
+    margin-top: 5px;
 }
 
-
+.price-container{
+    display: flex;
+    direction: row;
+  
+}

@@ -1,38 +1,41 @@
-<div>
-    <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 5px;">
-        <div class="bookCount">
-            <span class="bookstext">Books <p id="book-count">({{booksArray?.length}} items)</p></span>
-            <span class="count"></span>
-        </div>
-        <div class="sorting">
-            <mat-form-field style="margin-left:100px" appearance="outline">
-                <mat-label>Sort by relevance</mat-label>
-                <mat-select class="matselect">
-                    <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
-                    <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
-                    <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>
-    <div class="card">
-        <div class="fullbox" *ngFor="let Bookie of booksArray">
-            <div class="bookimgae">
-                <img class="img" [src]="Bookie.bookImage" alt="">
+<div >
+
+    <div>
+        <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 5px;width:100%">
+            <div class="bookCount">
+                <span class="bookstext">Books <p id="book-count">({{booksArray?.length}} items)</p></span>
+                <span class="count"></span>
             </div>
-            <h2 class="title">{{Bookie.bookName}}</h2>
-            <p id="paragraph">by {{Bookie.authorName}}</p>
-            <div class="rating" fxLayoutAlign="space-evenly center">
-                ({{Bookie.rating}})<img class="Star" src="../../assets/shoping/star.svg" alt="">
+            <div class="sorting">
+                <mat-form-field style="margin-left:100px" appearance="outline">
+                    <mat-label>Sort by relevance</mat-label>
+                    <mat-select class="matselect">
+                        <mat-option (click)="lowtohigh()" value="one">Price:Low to High</mat-option>
+                        <mat-option (click)=" hightolow()" value="two">Price:High to Low</mat-option>
+                        <mat-option (click)="newestarrivals()" value="third">Newest Arrivals</mat-option>
+                    </mat-select>
+                </mat-form-field>
             </div>
-            <p id="count">({{Bookie.totalView}})</p>
-            <div class="price-container"  >
-                <div class="discount">
-                    Rs.{{Bookie.discountPrice}}
-                   
+        </div>
+        <div class="card">
+            <div class="fullbox" *ngFor="let Bookie of booksArray" (click)="quickview(Bookie)">
+                <div class="bookimgae">
+                    <img class="img" [src]="Bookie.bookImage" alt="">
                 </div>
-                <div class="actual">
-                    Rs.{{Bookie.originalPrice}}
+                <h2 class="title">{{Bookie.bookName}}</h2>
+                <p id="paragraph">by {{Bookie.authorName}}</p>
+                <div class="rating" fxLayoutAlign="space-evenly center">
+                    ({{Bookie.rating}})<img class="Star" src="../../assets/shoping/star.svg" alt="">
+                </div>
+                <p id="count">({{Bookie.totalView}})</p>
+                <div class="price-container">
+                    <div class="discount">
+                        Rs.{{Bookie.discountPrice}}
+
+                    </div>
+                    <div class="actual">
+                        Rs.{{Bookie.originalPrice}}
+                    </div>
                 </div>
             </div>
         </div>

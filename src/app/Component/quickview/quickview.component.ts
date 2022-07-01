@@ -13,7 +13,7 @@ export class QuickviewComponent implements OnInit {
   Rating: any
   FeedbackArray: any
   show = false;
-  Quantity:any
+  
 
   constructor(private Bookser: BookService) { }
 
@@ -21,7 +21,7 @@ export class QuickviewComponent implements OnInit {
     this.BookId = localStorage.getItem('bookId')
     this.getBook();
 
-    console.log(this.BookId)
+    
   }
   getBook() {
     let reqdata = { bookId: this.BookId }
@@ -39,7 +39,7 @@ export class QuickviewComponent implements OnInit {
     let reqdata = { bookId: this.BookId, comment: this.Comment, rating: this.Rating }
     this.Bookser.addingfeedback(reqdata).subscribe(
       (response: any) => {
-        this.getFeedback();
+        // this.getFeedback();
         console.log(response);
 
 
@@ -55,14 +55,9 @@ export class QuickviewComponent implements OnInit {
     });
   }
   name = 'Angular ' + VERSION.major;
-  value = 0;
+  Quantity = 1;
 
-  handleMinus() {
-    this.value--;  
-  }
-  handlePlus() {
-    this.value++;    
-  }
+
 
   hideAndShow() {
     console.log("calling hide");

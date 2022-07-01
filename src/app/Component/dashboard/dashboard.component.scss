@@ -7,7 +7,7 @@
 .tool {
     background-color: brown;
     display: flex;
-   
+    width: 100%;
 }
 
 #text {
@@ -52,8 +52,11 @@ margin-left: 50px;
      bottom: 0;
     padding-left:170px ;
     background-color: #2E1D1E;
-    position:relative;
+    // position:fixed;
+     position: relative;
    width: 100%;
+//    position:absolute;
+   bottom:0;
 }   
 
 .wishlistIcon {

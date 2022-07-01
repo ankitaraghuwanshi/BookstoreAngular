@@ -1,5 +1,5 @@
-<div class="main" style="margin-bottom:20px">
-    <div class="main2">
+<div class="main" style="height: 100%;">
+    <div class="main2" style="margin-bottom:100px;height: 100%">
         <div class="head">
 
             <span style="color:rgb(183, 187, 190); margin-left: 87px;" routerLink="/dashboard/getallbook">Home/</span>
@@ -13,8 +13,9 @@
             <div class="leftside">
                 <div class="images" style="display: flex ;">
                     <div class="smallone" style="    margin-top: 33px;  margin-left: 90px;">
-                        <img class="imagesmaller" style="width: 50px; height: 70px;padding: 2px;border-color: brown;
-    border: 1px solid;" [src]="booksArray?.bookImage" alt="">
+                        <img class="imagesmaller"
+                            style="width: 50px; height: 70px;padding: 2px;border-color: brown;border: 1px solid;"
+                            [src]="booksArray?.bookImage" alt="">
                     </div>
                     <div class="bigimg" style="margin-left: 8px; margin-top: 32px;">
                         <div>
@@ -26,11 +27,17 @@
                             <div class="bitt" style="margin-top:10px">
 
                                 <button class="addtobag" *ngIf="!show" (click)="hideAndShow()">ADD TO BAG</button>
-                                <div class="wrapper" *ngIf="show">
-                                    <button style="background-color: white;">-</button>
-                                    <input style="width:80px" class="num" value="0" [(ngModel)]="value" />
-                                    <button style="background-color: white;" (click)="AddToBag()">+</button>
-                                </div>
+                                
+                                    <!-- <button style="background-color: white;">-</button> -->
+                                    <div class="numbers"  *ngIf="show" >
+                                        <img class="circle" src="../../../assets/shoping/minus.png">
+                                        <input class="inputBox" [(ngModel)]="Quantity" />
+                                       
+                                        <img class="circle" src="../../../assets/shoping/plus.png" (click)="AddToBag()">
+                                    </div>
+                                    <!-- <input style="width:80px" class="num" [(ngModel)]="Quantity" /> -->
+                                    <!-- <button style="background-color: white;" (click)="AddToBag()">+</button> -->
+                              
                                 <button class="wishlist">
                                     <mat-icon id="fav-icons">favorite</mat-icon>WISHLIST
                                 </button>

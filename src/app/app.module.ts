@@ -23,6 +23,7 @@ import { GetAllBookComponent } from './get-all-book/get-all-book.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
+import { CartComponent } from './Component/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { QuickviewComponent } from './Component/quickview/quickview.component';
     DashboardComponent,
     GetAllBookComponent,
     QuickviewComponent,
+    CartComponent,
   
    
   ],

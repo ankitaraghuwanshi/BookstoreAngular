@@ -183,10 +183,7 @@
 .usercomments{
     display: flex; flex-direction: column-reverse;margin-left: 30px;margin-top: 15px;background-color: aliceblue;
 }
-.wrapper{
-    height: 30px;
-    width: 140px;
-}
+
 .bitt{
     display: flex;
     direction:row;
@@ -195,4 +192,20 @@
 .usercom{
     margin-top: 37px;
     color: gray;
+}
+.numbers{
+    display: flex;
+    direction: row;
+  
+    height: 25px;
+   
+}
+
+.inputBox {
+    border: 3px solid gainsboro;
+  
+    width: 70px;
+   
+    text-align: center;
+
 }

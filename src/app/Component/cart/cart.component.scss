@@ -130,3 +130,15 @@
 .ngfor{
     margin-bottom: 64px;
 }
+.loco{
+    border: 1px solid;
+    width: 267px;
+    height:12px;
+    display: flex;
+    direction: row;
+}
+.location{
+    display: flex;
+    direction: row;
+    justify-content: space-between;
+}

@@ -1,0 +1,62 @@
+<div>
+    <div>
+        <div class="head">
+
+            <span style="color:rgb(183, 187, 190); margin-left: 87px;" routerLink="/dashboard/getallbook">Home/</span>
+            <span>My WishList ({{wishArray?.length}})<p id="book-count">
+                </p>
+            </span>
+            <span class="count"></span>
+        </div>
+        <div>
+            <mat-card class="card">
+
+                <div style="    width: 832px;
+                margin-top: -16px;
+                margin-left: -16px;
+                /* margin-right: 52px; */
+                height: 40px;
+                background-color: rgb(229 229 229);
+                margin-bottom: 30px;border-bottom: 1px solid gray">
+                    <span style="    margin-left: 25px;
+                font-size: 14px;
+               
+                font-weight: 500;">My WishList ({{wishArray?.length}})<p id="book-count">
+                        </p>
+                    </span>
+                </div>
+                <div *ngFor="let wish of wishArray">
+                    <div class="imgNameAndAuther">
+
+                        <img class="img" [src]="wish.bookmodel.bookImage">
+                        <div class="all">
+                            <div class="title">
+                                <p class="title">{{wish.bookmodel.bookName}}</p>
+                            </div>
+                            <div style="display: flex;direction: row; justify-content:space-between;">
+                                <div class="paragraph">
+                                    <p id="paragraph">{{wish.bookmodel.authorName}}</p>
+                                </div>
+                                <img style="height:18px;margin-left: 598px;"
+                                    src="../../../assets/shoping/delete_FILL0_wght400_GRAD0_opsz48.png" (click)="removeBookfromWishlist(wish.wishlistId)">
+                            </div>
+
+                            <div class="price">
+                                <div class="actualprice">
+                                    Rs.{{wish.bookmodel.originalPrice}}
+                                </div>
+                                <div class="discountprice">
+                                    Rs.{{wish.bookmodel.discountPrice }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 30px;margin-bottom: 20px;">
+                </div>
+            </mat-card>
+
+
+
+
+        </div>
+    </div>

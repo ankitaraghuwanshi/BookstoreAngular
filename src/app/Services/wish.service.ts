@@ -5,14 +5,13 @@ import { HttpService } from './HttpService/http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
-  token: any;
-
+export class WishService {
+  token:any
   constructor(private httpService: HttpService) {
     this.token = localStorage.getItem('token')
- }
+   }
 
-  getcartList(){
+  getwishList(){
     this.token = localStorage.getItem('token')
 
     let header = {
@@ -22,10 +21,9 @@ export class CartService {
       })
     }
    
-    return this.httpService.getService('Cart/GetCartByUserid', true, header)
+    return this.httpService.getService('WishList/GetWishlistByUserid', true, header)
   }
-
-  removeing(data: any) {
+  removeingWish(data: any) {
     this.token = localStorage.getItem('token')
 
     let header = {
@@ -35,18 +33,7 @@ export class CartService {
       })
     }
     console.log("reqdata")
-    return this.httpService.deleteService(`Cart/DeleteBook/${data.CartId}`, true, header)
+    return this.httpService.deleteService(`WishList/DeleteWishList/${data.WishListId }`, true, header)
   
   }
-  updatecartitem(CartId:any,data:any) {
-    let header = {
-      headers: new HttpHeaders({
-        'Content-Type': ' application/json',
-        'Authorization': 'Bearer ' +this.token
-      })
-    }
-    console.log("ankita")
-    return this.httpService.postService(`Cart/UpdateCart/${CartId}`,data, true, header);
-  }
 }
-

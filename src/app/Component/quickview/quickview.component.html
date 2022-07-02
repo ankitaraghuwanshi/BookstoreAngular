@@ -28,17 +28,15 @@
 
                                 <button class="addtobag" *ngIf="!show" (click)="hideAndShow()">ADD TO BAG</button>
                                 
-                                    <!-- <button style="background-color: white;">-</button> -->
+                                   
                                     <div class="numbers"  *ngIf="show" >
                                         <img class="circle" src="../../../assets/shoping/minus.png">
                                         <input class="inputBox" [(ngModel)]="Quantity" />
                                        
                                         <img class="circle" src="../../../assets/shoping/plus.png" (click)="AddToBag()">
                                     </div>
-                                    <!-- <input style="width:80px" class="num" [(ngModel)]="Quantity" /> -->
-                                    <!-- <button style="background-color: white;" (click)="AddToBag()">+</button> -->
-                              
-                                <button class="wishlist">
+                                   
+                                <button class="wishlist" (click)="AddTowishList()">
                                     <mat-icon id="fav-icons">favorite</mat-icon>WISHLIST
                                 </button>
 
@@ -74,7 +72,7 @@
                         <div class="bookdetails">
                             <span class="booktitle">Book Details</span>
                             <p class="bookparagraph">
-                                {{booksArray?.bookDetails}}
+                                A good book description is a detailed, descriptive copy that is good for public display, used for your book marketing, book discovery, and for sales purposes. It helps potential buyers find and understand your book. It's your pitch   {{booksArray?.bookDetails}}
 
 
                             </p>

@@ -1,4 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BookService } from 'src/app/Services/book.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class QuickviewComponent implements OnInit {
   show = false;
   
 
-  constructor(private Bookser: BookService) { }
+  constructor(private Bookser: BookService,private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.BookId = localStorage.getItem('bookId')
@@ -41,7 +42,9 @@ export class QuickviewComponent implements OnInit {
       (response: any) => {
         // this.getFeedback();
         console.log(response);
-
+        this.snackBar.open('FeedBack Added Successfully..!!!', '..', {
+          duration: 3000,
+        })
 
       }
     )
@@ -70,7 +73,23 @@ export class QuickviewComponent implements OnInit {
       (response: any) => {
        
         console.log(response);
+        this.snackBar.open('Book Addded In Cart Successfully..!!!', '..', {
+          duration: 3000,
+        })
 
+      }
+    )
+  }
+  AddTowishList() {
+    let reqdata = { bookId: this.BookId, quantity: this.Quantity }
+    this.Bookser.AddingToWishlist(reqdata).subscribe(
+      (response: any) => {
+       
+        console.log(response);
+        // this. getWishlist();
+        this.snackBar.open('Book Addded In WishList Successfully..!!!', '..', {
+          duration: 3000,
+        })
 
       }
     )

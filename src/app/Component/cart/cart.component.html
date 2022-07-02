@@ -12,26 +12,40 @@
             <mat-card class="card">
                 <div>
 
-                    <div>
-                        <h2 class="title">My Cart({{cartArray?.length}})</h2>
+                    <div class="location">
+                        <div>
+                           
+                            <h2 class="title">My Cart({{cartArray?.length}})</h2>
+                        </div>
+                        <div>
+                            <mat-card class="loco">
+                                
+                                  
+                                 
+                                <img style="height:25px;margin-top: -6px;" src="../../../assets/shoping/location.jpg"> 
+                                <p style="font-size: 17px;
+                                margin-left: 22px;">BridgeLabz Solutions </p> 
+                                <img style="margin-bottom:2px;height: 23px;" src="../../../assets/shoping/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.png">
+                            </mat-card>
+                        </div>
                     </div>
-                    <div >
+                    <div>
                         <div class="ngfor" *ngFor="let cartie of cartArray">
                             <div class="imgNameAndAuther">
                                 <img class="img" [src]="cartie.bookmodel.bookImage">
                                 <div class="all">
                                     <div class="title">
-                                     <p class="title">{{cartie.bookmodel.bookName}}</p>
+                                        <p class="title">{{cartie.bookmodel.bookName}}</p>
                                     </div>
                                     <div class="paragraph">
                                         <p id="paragraph">{{cartie.bookmodel.authorName}}</p>
                                     </div>
                                     <div class="price">
                                         <div class="actualprice">
-                                         Rs.{{cartie.bookmodel.originalPrice * cartie.bookQuantity}}
+                                            Rs.{{cartie.bookmodel.originalPrice * cartie.bookQuantity}}
                                         </div>
                                         <div class="discountprice">
-                                           Rs.{{cartie.bookmodel.discountPrice * cartie.bookQuantity}}
+                                            Rs.{{cartie.bookmodel.discountPrice * cartie.bookQuantity}}
                                         </div>
                                     </div>
                                 </div>
@@ -39,10 +53,13 @@
                             <div>
 
                                 <div class="numbers">
-                                    <img class="circle" src="../../../assets/shoping/plus.png">
-                                    <input class="inputBox" [value]="cartie.bookQuantity"/>
-                                    <img class="circle" src="../../../assets/shoping/minus.png">
-                                    <button class="removebutton" (click)="removeBookfromCart(cartie.cartId)" >Remove</button>
+                                    <img class="circle" src="../../../assets/shoping/plus.png"
+                                        (click)=plusingBook(cartie.cartId,cartie.bookId,cartie.bookQuantity)>
+                                    <input class="inputBox" [value]="cartie.bookQuantity" />
+                                    <img class="circle" src="../../../assets/shoping/minus.png"
+                                        (click)=minusingBook(cartie.cartId,cartie.bookId,cartie.bookQuantity)>
+                                    <button class="removebutton"
+                                        (click)="removeBookfromCart(cartie.cartId)">Remove</button>
                                 </div>
                             </div>
                         </div>

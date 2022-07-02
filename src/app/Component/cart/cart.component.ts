@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BookService } from 'src/app/Services/book.service';
+
 import { CartService } from 'src/app/Services/cart.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CartService } from 'src/app/Services/cart.service';
 export class CartComponent implements OnInit {
   cartArray: any
   BookId: any
- 
+
 
   constructor(private cartservice: CartService) { }
 
@@ -40,4 +40,35 @@ export class CartComponent implements OnInit {
 
     })
   }
+  minusingBook(cartId: any, bookId: any, bookQuantity: any) {
+   let data={
+    
+    bookId:bookId,
+    quantity:(bookQuantity - 1)
+   }
+    console.log(data)
+    if (bookQuantity > 1) {
+      this.cartservice.updatecartitem(cartId,data).subscribe((response: any) => {
+        console.log("Cart minus Successfully", response);
+        this.getCart()
+      });
+    }
+
+  }
+  plusingBook(cartId: any, bookId: any, bookQuantity: any) {
+    let data={
+     
+      bookId:bookId,
+      quantity:(bookQuantity + 1)
+     }
+    console.log(data)
+
+    this.cartservice.updatecartitem(cartId,data).subscribe((response: any) => {
+      console.log("Cart plus Successfully", response);
+      this.getCart()
+    });
+
+  }
+  
+
 }

@@ -8,6 +8,7 @@ import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { ResetComponent } from './Component/reset/reset.component';
 
 import { SignupComponent } from './Component/signup/signup.component';
+import { WishlistComponent } from './Component/wishlist/wishlist.component';
 import { GetAllBookComponent } from './get-all-book/get-all-book.component';
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
       { path: '', redirectTo: '/dashboard/getallbook', pathMatch: 'full' },
       { path: 'getallbook', component: GetAllBookComponent },
       {path:'quickview',component:QuickviewComponent},
-      {path:'cart',component:CartComponent}   
+      {path:'cart',component:CartComponent} ,
+      {path:'wishlist',component:WishlistComponent}     
     ]
   },
 ];

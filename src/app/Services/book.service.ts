@@ -72,6 +72,16 @@ export class BookService {
     }
     return this.httpService.postService('Cart/AddToCart', reqdata, true, header)
   }
+
+  AddingToWishlist(reqdata: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': ' application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    return this.httpService.postService(`WishList/AddToWishList/${reqdata.CartId}`, reqdata, true, header)
+}
 }
 
 

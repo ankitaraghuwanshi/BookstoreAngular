@@ -92,7 +92,7 @@
                                     <div>
                                         <p style="font-weight:500;margin-left: 10px;">Overall Rating</p>
                                         <div>
-                                            <div class="rate">
+                                            <div class="rate" >
 
                                                 <input type="radio" id="star5" name="rate" [(ngModel)]="Rating"
                                                     value="5" />
@@ -129,18 +129,18 @@
                                 <div class="userfeed">
                                     <span class="user-feedback"> <b></b> {{(feedback?.fullName)}}</span>
                                 </div>
-                                <div class="rate">
+                                <div class="rate" >{{feedback?.rating}}
 
-                                    <input type="radio" id="star5" name="rate" [(ngModel)]="Rating" value="5" />
-                                    <label for="star5" title="Extremely Good">5 stars</label>
-                                    <input type="radio" id="star4" name="rate" [(ngModel)]="Rating" value="4" />
-                                    <label for="star4" title="Very Good">4 stars</label>
-                                    <input type="radio" id="star3" name="rate" [(ngModel)]="Rating" value="3" />
-                                    <label for="star3" title="Good">3 stars</label>
-                                    <input type="radio" id="star2" name="rate" [(ngModel)]="Rating" value="2" />
-                                    <label for="star2" title="Not Bad">2 stars</label>
-                                    <input type="radio" id="star1" name="rate" [(ngModel)]="Rating" value="1" />
-                                    <label for="star1" title="Bad">1 star</label>
+                                    <!-- <input type="radio" id="star5" name="rate" [(ngModel)]="Rating" value="5" />{{feedback?.rating}} -->
+                                    <label for="star5" title="Extremely Good">5 stars <b>{{feedback?.rating}}</b> </label>
+                                    <!-- <input type="radio" id="star4" name="rate" [(ngModel)]="Rating" value="4" />{{feedback?.rating}} -->
+                                    <label for="star4" title="Very Good">4 stars <b>{{feedback?.rating}}</b> </label>
+                                    <!-- <input type="radio" id="star3" name="rate" [(ngModel)]="Rating" value="3" />{{feedback?.rating}} -->
+                                    <label for="star3" title="Good">3 stars <b>{{feedback?.rating}}</b></label>
+                                    <!-- <input type="radio" id="star2" name="rate" [(ngModel)]="Rating" value="2" />{{feedback?.rating}} -->
+                                    <label for="star2" title="Not Bad">2 stars<b>{{feedback?.rating}}</b></label>
+                                    <!-- <input type="radio" id="star1" name="rate" [(ngModel)]="Rating" value="1" />{{feedback?.rating}} -->
+                                    <label for="star1" title="Bad">1 star <b>{{feedback?.rating}}</b></label>
                                 </div>
                                 <div class="usercom">
                                     <span><b></b> {{feedback?.comment}}</span>

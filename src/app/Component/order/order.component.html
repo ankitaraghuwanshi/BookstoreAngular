@@ -1,0 +1,63 @@
+<div>
+    <div>
+        <div class="head">
+
+            <span style="color:rgb(183, 187, 190); margin-left: 87px;" routerLink="/dashboard/getallbook">Home/</span>
+            <span>My Orders({{orderArray?.length}})<p id="book-count">
+                </p>
+            </span>
+            <span class="count"></span>
+        </div>
+        <div>
+            <mat-card class="card">
+
+                <div>
+                    <p style="font-weight: bold; font-size: medium;">My Orders</p>
+                </div>
+                <div *ngFor="let orderie of orderArray">
+                    <div class="imgNameAndAuther">
+
+                        <img class="img" [src]="orderie?.bookImage">
+                        <div class="all">
+                            
+                            <div class="title">
+                                <p class="title">{{orderie?.bookName}}</p>
+                            </div>
+                           
+                            <div style="display: flex;direction: row; justify-content:space-between;">
+                                <div class="paragraph">
+                                    <p id="paragraph">{{orderie?.authorName}}</p>
+                                </div>
+                               
+
+                            </div>
+                           
+
+                            <div class="price">
+                                <div class="actualprice">
+                                  Rs.{{orderie.totalPrice }}
+
+                                </div>
+                               
+                            </div>
+                            <div class="date">
+                                <div>
+                                    <img style="height:19px" src="../../../assets/shoping/greencircle.png">
+                                </div>
+                                <div>
+                                    Order Placed on {{orderie?.orderDate}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 30px;margin-bottom: 20px;">
+                </div>
+               
+            </mat-card>
+
+
+
+
+        </div>
+    </div>

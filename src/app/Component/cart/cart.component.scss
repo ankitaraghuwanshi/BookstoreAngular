@@ -5,19 +5,21 @@
     font-size: medium;
     color: rgb(214, 211, 211);
 }
+
 #text {
     color: white;
     padding-left: 5px;
 
 
 }
-.head{
+
+.head {
     margin-top: 9px;
 }
 
 .card {
     margin-top: 40px;
-    height:auto;
+    height: auto;
     width: 800px;
     margin-left: 88px;
 
@@ -111,34 +113,74 @@
 }
 
 .adress {
-   margin-top: 30px;
-    height: 40px;
-    width: 800px;
-    margin-left: 90px;
-    // border: 1px solid;
-    border-color: aliceblue;
-}
-.order{
     margin-top: 30px;
     height: 40px;
     width: 800px;
     margin-left: 90px;
-    // border: 1px solid; 
+    border: 1px solid;
+    border-color: beige;
+    border-color: aliceblue;
+}
+
+.order {
+    margin-top: 30px;
+    height: 40px;
+    width: 800px;
+    margin-left: 90px;
+    border: 1px solid;
+    border-color: beige;
     margin-bottom: 93px;
     border-color: aliceblue;
 }
-.ngfor{
+
+.ngfor {
     margin-bottom: 64px;
 }
-.loco{
+
+.loco {
     border: 1px solid;
     width: 267px;
-    height:12px;
+    height: 12px;
     display: flex;
     direction: row;
 }
-.location{
+
+.location {
     display: flex;
     direction: row;
     justify-content: space-between;
 }
+
+.fillAdress {
+    margin-top: 30px;
+    // height: 40px;
+    width: 800px;
+    margin-left: 90px;
+    border: 1px solid;
+    border-color: beige;
+    border-color: aliceblue;
+}
+
+.detil {
+    margin: 20px
+}
+
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-flex {
+
+    height: 44px;
+}
+.addNewAdressbutton{
+    width: 154px;
+    height: 35px;
+    background-color: transparent;
+    border-color: #f30303;
+}   
+.showordercard{
+    margin-top: 40px;
+    height: auto;
+    width: 800px;
+    margin-left: 88px;
+margin-bottom: 40px;
+    border: 1px solid;
+    border-color: beige;  
+}  

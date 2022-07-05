@@ -14,18 +14,19 @@
 
                     <div class="location">
                         <div>
-                           
+
                             <h2 class="title">My Cart({{cartArray?.length}})</h2>
                         </div>
                         <div>
                             <mat-card class="loco">
-                                
-                                  
-                                 
-                                <img style="height:25px;margin-top: -6px;" src="../../../assets/shoping/location.jpg"> 
+
+
+
+                                <img style="height:25px;margin-top: -6px;" src="../../../assets/shoping/location.jpg">
                                 <p style="font-size: 17px;
-                                margin-left: 22px;">BridgeLabz Solutions </p> 
-                                <img style="margin-bottom:2px;height: 23px;" src="../../../assets/shoping/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.png">
+                                margin-left: 22px;">BridgeLabz Solutions </p>
+                                <img style="margin-bottom:2px;height: 23px;"
+                                    src="../../../assets/shoping/arrow_drop_down_FILL0_wght400_GRAD0_opsz48.png">
                             </mat-card>
                         </div>
                     </div>
@@ -64,7 +65,7 @@
                             </div>
                         </div>
                         <div class="placeorder">
-                            <button class="buttOrder">
+                            <button class="buttOrder" *ngIf="!show" (click)="hideAndShow()">
                                 PLACE ORDER
                             </button>
                         </div>
@@ -72,17 +73,247 @@
 
                 </div>
             </mat-card>
+            <!--------------------- ending cart here ---------------------------------------------------------------->
+            <div>
+                <mat-card class="adress" *ngIf="!show">
+                    <p style="margin-left: 10px; font-size: 17px; font-weight: 500;"> Adress Details</p>
+                </mat-card>
+                <mat-card class="fillAdress" *ngIf="show">
+                    <div class="wholeDetails">
+                        <div style="display:flex;direction:row;justify-content: space-between;margin-bottom: 25px;">
+                            <h2>Customer Details</h2>
+                            <button class="addNewAdressbutton" *ngIf="!showNewAdd" (click)="hideAndShowNewAdd()">Add New
+                                Address </button>
+                        </div>
+                        <!-- changes -->
+                        <div class="detil" *ngIf="!showNewAdd">
+                            <div *ngFor="let Address of addressArray">
+                                <div *ngIf="Address.typeId===1">
+                                    <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId"
+                                        value="{{Address.addressId}}" style="margin-top: 20px;">
+                                    <span for="Address.typeId" style="font-size: 18px;">.Home </span>
+                                </div>
+                                <div *ngIf="Address.typeId===2">
+                                    <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId" 
+                                    value="{{Address.addressId}}"  style="margin-top: 20px;">
+                                    <span for="Address.addressId" style="font-size: 18px;">.Work </span>
+                                </div>
+                                <div *ngIf="Address.typeId > 2">
+                                    <input type="radio" [(ngModel)]="AddressId" [id]="Address.addressId"
+                                        value="{{Address.addressId}}" style="margin-top: 20px;">
+                                    <span for="Address.addressId" style="font-size: 18px;">.other </span>
+                                </div>
+                                <div style="display:flex;direction:row;">
 
-            <mat-card class="adress">
-                <p style="margin-left: 10px;
-              font-size: 17px;
-              font-weight: 500;"> Adress Details</p>
-            </mat-card>
-            <mat-card class="order">
-                <p style="margin-left: 10px;
-                font-size: 17px;
-                font-weight: 500;"> Book Details</p>
-            </mat-card>
+                                    <div>
+                                        <div>
+                                            <mat-label>FullName</mat-label>
+                                        </div>
+                                        <div>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput placeholder="anki raghu">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div style="margin-left:20px">
+                                        <div>
+                                            <mat-label>MobileNumber</mat-label>
+                                        </div>
+                                        <div>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput placeholder="9089898989">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div>
+                                        <mat-label>Address</mat-label>
+                                    </div>
+                                    <mat-form-field style="width:420px" appearance="outline">
+                                        <input matInput placeholder="" [value]="Address.address">
+                                    </mat-form-field>
+
+                                </div>
+                                <div style="display:flex;direction:row;">
+                                    <div>
+                                        <div>
+                                            <mat-label>City</mat-label>
+                                        </div>
+                                        <div>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput placeholder="" [value]="Address.city">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div style="margin-left:20px">
+                                        <div>
+                                            <mat-label>State</mat-label>
+                                        </div>
+                                        <div>
+                                            <mat-form-field appearance="outline">
+                                                <input matInput placeholder="" [value]="Address.state">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+
+                                    <!-- <div>
+                                    <h4>Type</h4>
+                                </div>
+                                <div>
+
+                                    <mat-radio-group aria-label="Select an option">
+                                        <mat-radio-button style="margin-right: 25px;" value="0">Home</mat-radio-button>
+                                        <mat-radio-button style="margin-right: 25px;" value="1">Work</mat-radio-button>
+                                        <mat-radio-button value="2">Other</mat-radio-button>
+                                    </mat-radio-group>
+                                </div> -->
+
+                                </div>
+                            </div>
+                            <div class="placeorder">
+                                <button class="buttOrder" *ngIf="!showOrder" (click)="hideAndShowOrder()">
+                                    Continue
+                                </button>
+                            </div>
+                            <!---------------------- ending of get all address here -------------------------------------------->
+                        </div>
+                        <div class="detil" *ngIf="showNewAdd">
+
+                            <div style="display:flex;direction:row;">
+
+                                <div>
+                                    <div>
+                                        <mat-label>FullName</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+                                            <input matInput placeholder="">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div style="margin-left:20px">
+                                    <div>
+                                        <mat-label>MobileNumber</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+                                            <input matInput placeholder="">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <mat-label>Address</mat-label>
+                                </div>
+                                <mat-form-field style="width:420px" appearance="outline">
+                                    <input matInput placeholder="">
+                                </mat-form-field>
+
+                            </div>
+                            <div style="display:flex;direction:row;">
+                                <div>
+                                    <div>
+                                        <mat-label>City</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+                                            <input matInput placeholder="">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div style="margin-left:20px">
+                                    <div>
+                                        <mat-label>State</mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field appearance="outline">
+                                            <input matInput placeholder="">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+
+                                <div>
+                                    <h4>Type</h4>
+                                </div>
+                                <div>
+                                    <mat-radio-group aria-label="Select an option">
+                                        <mat-radio-button style="margin-right: 25px;" value="1">Home</mat-radio-button>
+                                        <mat-radio-button style="margin-right: 25px;" value="2">Work</mat-radio-button>
+                                        <mat-radio-button value="3">Other</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                                 <!-- adding new address -->
+                                <div class="placeorder">
+                                    <button class="buttOrder">
+                                       
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--------------------------- end add new adddresss  here -------------------------------------------->
+                    </div>
+
+                </mat-card>
+                <mat-card class="order" *ngIf="!showOrder">
+                    <p style="margin-left: 10px;font-size: 17px; font-weight: 500;margin-bottom: 10px"> Order Details
+                    </p>
+                </mat-card>
+
+                <mat-card class="card" *ngIf="showOrder">
+
+                    <div>
+                        <p style="font-weight: bold; font-size: medium;">Order summery</p>
+                    </div>
+
+                    <div *ngFor="let cart of cartArray">
+                        <div class="imgNameAndAuther">
+
+                            <img class="img" [src]="cart.bookmodel.bookImage">
+                            <div class="all">
+                                <div class="title">
+                                    <p class="title">{{cart.bookmodel.bookName}}</p>
+                                </div>
+                                <div style="display: flex;direction: row; justify-content:space-between;">
+                                    <div class="paragraph">
+                                        <p id="paragraph">{{cart.bookmodel.authorName}}</p>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="price">
+                                    <div class="actualprice">
+                                        Rs.{{cart.bookmodel.originalPrice}}
+                                    </div>
+                                    <div class="discountprice">
+                                        Rs.{{cart.bookmodel.discountPrice }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="placeorder">
+                            <button class="buttOrder" (click)="AddOrder(cart.bookId,cart.bookQuantity)" >
+                                Checkout
+                            </button>
+                        </div>
+                        <hr style="margin-top: 30px;margin-bottom: 20px;">
+                    </div>
+
+                </mat-card>
+                <!-------------- ending order summary here --------------------------------------------------------------------->
+            </div>
+
         </div>
     </div>
 </div>

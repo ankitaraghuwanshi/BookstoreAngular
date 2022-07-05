@@ -4,6 +4,9 @@ import { CartComponent } from './Component/cart/cart.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './Component/forgot-password/forgot-password.component';
 import { LoginComponent } from './Component/login/login.component';
+
+
+import { OrderComponent } from './Component/order/order.component';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { ResetComponent } from './Component/reset/reset.component';
 
@@ -24,7 +27,9 @@ const routes: Routes = [
       { path: 'getallbook', component: GetAllBookComponent },
       {path:'quickview',component:QuickviewComponent},
       {path:'cart',component:CartComponent} ,
-      {path:'wishlist',component:WishlistComponent}     
+      {path:'wishlist',component:WishlistComponent}  ,
+      {path:'order',component:OrderComponent} , 
+      
     ]
   },
 ];

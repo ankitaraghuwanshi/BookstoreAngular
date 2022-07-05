@@ -26,6 +26,10 @@ import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { CartComponent } from './Component/cart/cart.component';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { WishlistComponent } from './Component/wishlist/wishlist.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { OrderComponent } from './Component/order/order.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +42,9 @@ import { WishlistComponent } from './Component/wishlist/wishlist.component';
     QuickviewComponent,
     CartComponent,
     WishlistComponent,
+    OrderComponent,
+   
+   
   
    
   ],
@@ -47,7 +54,7 @@ import { WishlistComponent } from './Component/wishlist/wishlist.component';
     BrowserAnimationsModule,
 
     MatFormFieldModule,MatCardModule,MatInputModule,FormsModule,ReactiveFormsModule,HttpClientModule,HttpClientModule,
-    MatToolbarModule,MatIconModule,MatMenuModule,MatSelectModule,MatSnackBarModule
+    MatToolbarModule,MatIconModule,MatMenuModule,MatSelectModule,MatSnackBarModule,MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 import { CartService } from 'src/app/Services/cart.service';
 
@@ -10,13 +13,28 @@ import { CartService } from 'src/app/Services/cart.service';
 export class CartComponent implements OnInit {
   cartArray: any
   BookId: any
+  show = false;
+  showOrder=false;
+  addressId:any
+ 
+  token:any
+  addressArray:any
+  showNewAdd=false
+ 
+ 
+  AddressId:any
 
-
-  constructor(private cartservice: CartService) { }
+  constructor(private cartservice: CartService,private snackBar:MatSnackBar,private router:Router) {
+   
+  }
+   
+ 
 
   ngOnInit(): void {
     this.BookId = localStorage.getItem('bookId')
     this.getCart();
+    this.getAddress();
+    
   }
   getCart() {
     this.cartservice.getcartList().subscribe(
@@ -69,6 +87,50 @@ export class CartComponent implements OnInit {
     });
 
   }
-  
+  hideAndShow() {
+    console.log("calling hide");
+    this.show = !this.show;
 
+  }
+ 
+  hideAndShowOrder(){
+    console.log("calling hide");
+    this.showOrder = !this.showOrder;
+
+  }
+  getAddress() {
+    this.cartservice.getAddressList().subscribe(
+      (response: any) => {
+        this.addressArray = response.response;
+       
+        console.log("get all Address successfully",this.addressArray);
+
+
+      }
+    )
+  }
+  hideAndShowNewAdd(){
+    console.log("calling hide");
+    this.showNewAdd = !this.showNewAdd;
+
+  }
+
+  AddOrder(BookId:any,bookQuantity:any) {
+    let reqdata = { bookId: BookId, addressId: this.AddressId, bookQuantity:bookQuantity }
+    this.cartservice.addingorder(reqdata).subscribe(
+      (response: any) => {
+        // this.getFeedback();
+        console.log(response);
+      
+        // this.router.navigateByUrl('./order-placed')
+        this.snackBar.open(' order placed Successfully..!!!', '..', {
+          duration: 3000,
+        })
+
+      }
+    )
+  }
+ 
 }
+
+

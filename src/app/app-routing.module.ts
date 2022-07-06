@@ -7,6 +7,7 @@ import { LoginComponent } from './Component/login/login.component';
 
 
 import { OrderComponent } from './Component/order/order.component';
+import { OrderplacedComponent } from './Component/orderplaced/orderplaced.component';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { ResetComponent } from './Component/reset/reset.component';
 
@@ -29,7 +30,7 @@ const routes: Routes = [
       {path:'cart',component:CartComponent} ,
       {path:'wishlist',component:WishlistComponent}  ,
       {path:'order',component:OrderComponent} , 
-      
+      {path:'orderplaced',component:OrderplacedComponent} , 
     ]
   },
 ];

@@ -14,27 +14,30 @@ export class CartComponent implements OnInit {
   cartArray: any
   BookId: any
   show = false;
-  showOrder=false;
-  addressId:any
- 
-  token:any
-  addressArray:any
-  showNewAdd=false
- 
- 
-  AddressId:any
+  showOrder = false;
+  addressId: any
 
-  constructor(private cartservice: CartService,private snackBar:MatSnackBar,private router:Router) {
-   
+  token: any
+  addressArray: any
+  showNewAdd = false
+
+
+  AddressId: any
+  value:any
+  myaddress: any
+  mycity: any
+  mystate: any
+  constructor(private cartservice: CartService, private snackBar: MatSnackBar, private router: Router) {
+
   }
-   
- 
+
+
 
   ngOnInit(): void {
     this.BookId = localStorage.getItem('bookId')
     this.getCart();
     this.getAddress();
-    
+
   }
   getCart() {
     this.cartservice.getcartList().subscribe(
@@ -59,14 +62,14 @@ export class CartComponent implements OnInit {
     })
   }
   minusingBook(cartId: any, bookId: any, bookQuantity: any) {
-   let data={
-    
-    bookId:bookId,
-    quantity:(bookQuantity - 1)
-   }
+    let data = {
+
+      bookId: bookId,
+      quantity: (bookQuantity - 1)
+    }
     console.log(data)
     if (bookQuantity > 1) {
-      this.cartservice.updatecartitem(cartId,data).subscribe((response: any) => {
+      this.cartservice.updatecartitem(cartId, data).subscribe((response: any) => {
         console.log("Cart minus Successfully", response);
         this.getCart()
       });
@@ -74,14 +77,14 @@ export class CartComponent implements OnInit {
 
   }
   plusingBook(cartId: any, bookId: any, bookQuantity: any) {
-    let data={
-     
-      bookId:bookId,
-      quantity:(bookQuantity + 1)
-     }
+    let data = {
+
+      bookId: bookId,
+      quantity: (bookQuantity + 1)
+    }
     console.log(data)
 
-    this.cartservice.updatecartitem(cartId,data).subscribe((response: any) => {
+    this.cartservice.updatecartitem(cartId, data).subscribe((response: any) => {
       console.log("Cart plus Successfully", response);
       this.getCart()
     });
@@ -92,8 +95,8 @@ export class CartComponent implements OnInit {
     this.show = !this.show;
 
   }
- 
-  hideAndShowOrder(){
+
+  hideAndShowOrder() {
     console.log("calling hide");
     this.showOrder = !this.showOrder;
 
@@ -102,35 +105,54 @@ export class CartComponent implements OnInit {
     this.cartservice.getAddressList().subscribe(
       (response: any) => {
         this.addressArray = response.response;
-       
-        console.log("get all Address successfully",this.addressArray);
+
+        console.log("get all Address successfully", this.addressArray);
 
 
       }
     )
   }
-  hideAndShowNewAdd(){
+  hideAndShowNewAdd() {
     console.log("calling hide");
     this.showNewAdd = !this.showNewAdd;
 
   }
 
-  AddOrder(BookId:any,bookQuantity:any) {
-    let reqdata = { bookId: BookId, addressId: this.AddressId, bookQuantity:bookQuantity }
+  AddOrder(BookId: any, bookQuantity: any) {
+    let reqdata = { bookId: BookId, addressId: this.AddressId, bookQuantity: bookQuantity }
     this.cartservice.addingorder(reqdata).subscribe(
       (response: any) => {
-        // this.getFeedback();
+
         console.log(response);
-      
-        // this.router.navigateByUrl('./order-placed')
+
+
         this.snackBar.open(' order placed Successfully..!!!', '..', {
           duration: 3000,
         })
-
+        this.router.navigate(['/dashboard/orderplaced'])
       }
     )
   }
- 
+  //  adding new addresss
+  AddingNewAddress() {
+    let data={
+      address:this.myaddress,
+      typeId:this.value,
+      city:this.mycity,
+      state:this.mystate
+
+    }
+    this.cartservice.addnewAddress(data).subscribe(
+      (response: any) => {
+        console.log('Add to wishlist', response);
+        this.snackBar.open('your Address added Successfully', '', {
+          duration: 3000,
+        })
+        
+      },
+     
+    );
+  }
 }
 
 

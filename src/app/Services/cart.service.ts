@@ -74,6 +74,20 @@ export class CartService {
     console.log(reqdata)
     return this.httpService.postService('Order/AddOrder', reqdata, true, header)
   }
+  
+  addnewAddress(data:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': ' application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    }
+    console.log(data)
+    return this.httpService.postService('Adddress/AddAddress', data, true, header)
+  }
 
+
+
+  
 }
 

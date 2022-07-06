@@ -160,17 +160,7 @@
                                 </div>
                                 <div>
 
-                                    <!-- <div>
-                                    <h4>Type</h4>
-                                </div>
-                                <div>
-
-                                    <mat-radio-group aria-label="Select an option">
-                                        <mat-radio-button style="margin-right: 25px;" value="0">Home</mat-radio-button>
-                                        <mat-radio-button style="margin-right: 25px;" value="1">Work</mat-radio-button>
-                                        <mat-radio-button value="2">Other</mat-radio-button>
-                                    </mat-radio-group>
-                                </div> -->
+                                   
 
                                 </div>
                             </div>
@@ -212,7 +202,7 @@
                                     <mat-label>Address</mat-label>
                                 </div>
                                 <mat-form-field style="width:420px" appearance="outline">
-                                    <input matInput placeholder="">
+                                    <input [(ngModel)]="myaddress" matInput placeholder="">
                                 </mat-form-field>
 
                             </div>
@@ -223,7 +213,7 @@
                                     </div>
                                     <div>
                                         <mat-form-field appearance="outline">
-                                            <input matInput placeholder="">
+                                            <input [(ngModel)]="mycity" matInput placeholder="">
                                         </mat-form-field>
                                     </div>
                                 </div>
@@ -233,7 +223,7 @@
                                     </div>
                                     <div>
                                         <mat-form-field appearance="outline">
-                                            <input matInput placeholder="">
+                                            <input [(ngModel)]="mystate" matInput placeholder="">
                                         </mat-form-field>
                                     </div>
                                 </div>
@@ -244,15 +234,15 @@
                                     <h4>Type</h4>
                                 </div>
                                 <div>
-                                    <mat-radio-group aria-label="Select an option">
-                                        <mat-radio-button style="margin-right: 25px;" value="1">Home</mat-radio-button>
-                                        <mat-radio-button style="margin-right: 25px;" value="2">Work</mat-radio-button>
-                                        <mat-radio-button value="3">Other</mat-radio-button>
+                                    <mat-radio-group aria-label="Select an option" [(ngModel)]="value">
+                                        <mat-radio-button style="margin-right: 25px;" value="1" [(ngModel)]="value" >Home</mat-radio-button>
+                                        <mat-radio-button style="margin-right: 25px;" value="2" [(ngModel)]="value" >Work</mat-radio-button>
+                                        <mat-radio-button value="3" [(ngModel)]="value" >Other</mat-radio-button>
                                     </mat-radio-group>
                                 </div>
                                  <!-- adding new address -->
                                 <div class="placeorder">
-                                    <button class="buttOrder">
+                                    <button class="buttOrder" (click)="AddingNewAddress()">
                                        
                                         Continue
                                     </button>

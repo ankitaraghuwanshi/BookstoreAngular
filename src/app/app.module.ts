@@ -28,6 +28,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
 import { WishlistComponent } from './Component/wishlist/wishlist.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { OrderComponent } from './Component/order/order.component';
+import { OrderplacedComponent } from './Component/orderplaced/orderplaced.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { OrderComponent } from './Component/order/order.component';
     CartComponent,
     WishlistComponent,
     OrderComponent,
+    OrderplacedComponent,
    
    
   
